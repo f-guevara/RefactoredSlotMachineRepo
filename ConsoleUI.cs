@@ -84,14 +84,9 @@ namespace SlotMachine
 
         public static bool ShouldContinueSpinning()
         {
-            while (true)
-            {
-                Console.WriteLine("Press 'S' to spin again, or 'Q' to change play option...");
-                string input = Console.ReadLine().ToUpper();
-                if (input == "S") return true;
-                if (input == "Q") return false;
-                Console.WriteLine("Invalid input. Please try again.");
-            }
+            Console.WriteLine("Press any key to spin again, or ESC to change play option...");
+            ConsoleKeyInfo keyInfo = Console.ReadKey(true); 
+            return keyInfo.Key != ConsoleKey.Escape;
         }
 
     }
