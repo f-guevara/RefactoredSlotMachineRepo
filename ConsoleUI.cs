@@ -53,5 +53,10 @@ namespace SlotMachine
         {
             Console.WriteLine("You don't have enough money to spin. Game Over.");
         }
+
+        public static void DisplayWinMessage(int winAmount)
+        {
+            Console.WriteLine($"Congratulations! You won {winAmount} euros!");
+        }
     }
 }

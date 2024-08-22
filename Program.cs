@@ -14,6 +14,13 @@
                 int[,] grid = SlotMachineGame.GenerateRandomGrid();
                 ConsoleUI.DisplayGrid(grid);
 
+
+                //Checf if player has won
+                if (SlotMachineGame.CheckWinCondition(grid))
+                {
+                    money += SlotMachineGame.WIN_AMOUNT;
+                    ConsoleUI.DisplayWinMessage(SlotMachineGame.WIN_AMOUNT);
+                }
                 // Display remaining money
                 ConsoleUI.DisplayRemainingMoney(money);
 
