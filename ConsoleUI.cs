@@ -58,5 +58,41 @@ namespace SlotMachine
         {
             Console.WriteLine($"Congratulations! You won {winAmount} euros!");
         }
+
+        public static int SelectPlayOption()
+        {
+            while (true)
+            {
+                Console.WriteLine("\nChoose your play option:");
+                Console.WriteLine($"{SlotMachineGame.PLAY_OPTION_CENTER_LINE}: Center Line");
+                Console.WriteLine($"{SlotMachineGame.PLAY_OPTION_HORIZONTAL_LINES}: Horizontal Lines");
+                Console.WriteLine($"{SlotMachineGame.PLAY_OPTION_VERTICAL_LINES}: Vertical Lines");
+                Console.WriteLine($"{SlotMachineGame.PLAY_OPTION_DIAGONALS}: Diagonals");
+                Console.WriteLine($"{SlotMachineGame.PLAY_OPTION_QUIT}: Quit Game");
+                Console.Write("Enter your choice: ");
+
+                if (int.TryParse(Console.ReadLine(), out int choice))
+                {
+                    if (choice >= SlotMachineGame.PLAY_OPTION_CENTER_LINE && choice <= SlotMachineGame.PLAY_OPTION_QUIT)
+                    {
+                        return choice;
+                    }
+                }
+                Console.WriteLine("Invalid option. Please try again.");
+            }
+        }
+
+        public static bool ShouldContinueSpinning()
+        {
+            while (true)
+            {
+                Console.WriteLine("Press 'S' to spin again, or 'Q' to change play option...");
+                string input = Console.ReadLine().ToUpper();
+                if (input == "S") return true;
+                if (input == "Q") return false;
+                Console.WriteLine("Invalid input. Please try again.");
+            }
+        }
+
     }
 }
