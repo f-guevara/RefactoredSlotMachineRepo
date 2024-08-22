@@ -43,5 +43,15 @@ namespace SlotMachine
 
             return money;
         }
+
+        public static void DisplayRemainingMoney(int money)
+        {
+            Console.WriteLine($"You have {money} euros left.");
+        }
+
+        public static void DisplayInsufficientFundsMessage()
+        {
+            Console.WriteLine("You don't have enough money to spin. Game Over.");
+        }
     }
 }

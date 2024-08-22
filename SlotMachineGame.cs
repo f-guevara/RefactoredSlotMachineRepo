@@ -10,6 +10,7 @@ namespace SlotMachine
         // Constants for the money range
         public const int MIN_BET_AMOUNT = 1;
         public const int MAX_BET_AMOUNT = 100;
+        public const int COST_PER_SPIN = 1;
 
         public static int[,] GenerateRandomGrid()
         {
@@ -25,6 +26,12 @@ namespace SlotMachine
             }
 
             return grid;
+        }
+
+        // Method to deduct the cost of a spin
+        public static int DeductSpinCost(int currentMoney)
+        {
+            return currentMoney - COST_PER_SPIN;
         }
     }
 }
