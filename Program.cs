@@ -4,6 +4,9 @@
     {
         static void Main(string[] args)
         {
+            // Step 2: Ask for the starting amount of money with validation
+            int money = ConsoleUI.GetStartingMoney();
+
             // Generate and display the random grid
             int[,] grid = SlotMachineGame.GenerateRandomGrid();
             ConsoleUI.DisplayGrid(grid);

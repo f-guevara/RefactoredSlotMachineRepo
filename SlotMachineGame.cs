@@ -7,6 +7,10 @@ namespace SlotMachine
         public const int RANDOM_MIN_VALUE = 0;
         public const int RANDOM_MAX_VALUE = 6;
 
+        // Constants for the money range
+        public const int MIN_BET_AMOUNT = 1;
+        public const int MAX_BET_AMOUNT = 100;
+
         public static int[,] GenerateRandomGrid()
         {
             int[,] grid = new int[GRID_SIZE, GRID_SIZE];

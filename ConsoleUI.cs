@@ -13,5 +13,35 @@ namespace SlotMachine
                 Console.WriteLine();
             }
         }
+
+        public static int GetStartingMoney()
+        {
+            int money = 0;
+            bool validInput = false;
+
+            while (!validInput)
+            {
+                Console.Write($"Enter the amount of money you want to start with ({SlotMachineGame.MIN_BET_AMOUNT} to {SlotMachineGame.MAX_BET_AMOUNT} euros): ");
+                string input = Console.ReadLine();
+
+                if (int.TryParse(input, out money))
+                {
+                    if (money >= SlotMachineGame.MIN_BET_AMOUNT && money <= SlotMachineGame.MAX_BET_AMOUNT)
+                    {
+                        validInput = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Please enter an amount between {SlotMachineGame.MIN_BET_AMOUNT} and {SlotMachineGame.MAX_BET_AMOUNT} euros.");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input. Please enter a whole number (no cents).");
+                }
+            }
+
+            return money;
+        }
     }
 }
